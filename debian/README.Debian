@@ -12,7 +12,7 @@ and this line at the very END of ~/.bashrc:
 
 Then open a new terminal. `echo $BLE_VERSION` shows the running version.
 
-Updates come from apt (deb.griffo.io); `ble-update` is redirected there.
+Updates come from apt (deb.gaofn.xyz); `ble-update` is redirected there.
 The vim-airline themes live in the separate ble.sh-airline-themes package.
 
- -- Dario Griffo <dariogriffo@gmail.com>
+ -- Fengnan Gao <gao.fengnan@gmail.com>

@@ -53,9 +53,9 @@ build_packages() {
     fi
 
     # One pair of packages for every suite: ble.sh is pure Bash, so only the
-    # old ~<suite> version suffix ever differed. The fixed ~griffo keeps it
+    # old ~<suite> version suffix ever differed. The fixed ~gaofn keeps it
     # below the distro's own build of the same version.
-    FULL_VERSION="$BLESH_VERSION-${BUILD_VERSION}~griffo_${ARCH}"
+    FULL_VERSION="$BLESH_VERSION-${BUILD_VERSION}~gaofn_${ARCH}"
     echo "  Building $FULL_VERSION"
 
     if ! docker build . -t "blesh-$ARCH" \
@@ -98,4 +98,4 @@ fi
 echo ""
 echo "🎉 Packages built successfully!"
 echo "Generated packages:"
-ls -la ble.sh*~griffo_all.deb
+ls -la ble.sh*~gaofn_all.deb

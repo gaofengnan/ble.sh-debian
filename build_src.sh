@@ -27,7 +27,7 @@ NIGHTLY="ble-nightly-${SNAPSHOT%%.*}+${SNAPSHOT#*.}"
 # byte-reproducible. Reuse the earlier release's copy.
 if [ ! -f "$ORIG_TARBALL" ]; then
     for ((b = BUILD_VERSION - 1; b >= 1; b--)); do
-        if wget -q "https://github.com/dariogriffo/ble.sh-debian/releases/download/${BLESH_VERSION}%2B${b}/${ORIG_TARBALL}" -O "$ORIG_TARBALL"; then
+        if wget -q "https://github.com/gaofengnan/ble.sh-debian/releases/download/${BLESH_VERSION}%2B${b}/${ORIG_TARBALL}" -O "$ORIG_TARBALL"; then
             echo "  Reusing $ORIG_TARBALL from release ${BLESH_VERSION}+${b}"
             break
         fi
@@ -59,7 +59,7 @@ else
 fi
 
 build_source_package() {
-    local FULL_VERSION="${BLESH_VERSION}-${BUILD_VERSION}~griffo"
+    local FULL_VERSION="${BLESH_VERSION}-${BUILD_VERSION}~gaofn"
 
     echo "  Building source package ${FULL_VERSION}..."
 
@@ -76,7 +76,7 @@ ble.sh (${FULL_VERSION}) stable; urgency=medium
 
   * New upstream nightly snapshot ${BLESH_VERSION}.
 
- -- Dario Griffo <dariogriffo@gmail.com>  $(date -R)
+ -- Fengnan Gao <gao.fengnan@gmail.com>  $(date -R)
 EOF
 
     # Build source package (.dsc + .debian.tar.xz); reuses existing .orig.tar.xz

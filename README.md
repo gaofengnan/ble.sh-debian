@@ -1,12 +1,12 @@
-![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/dariogriffo/ble.sh-debian/total)
-![GitHub Downloads (all assets, latest release)](https://img.shields.io/github/downloads/dariogriffo/ble.sh-debian/latest/total)
-![GitHub Release](https://img.shields.io/github/v/release/dariogriffo/ble.sh-debian)
-![GitHub Release Date](https://img.shields.io/github/release-date/dariogriffo/ble.sh-debian?display_date=published_at)
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/gaofengnan/ble.sh-debian/total)
+![GitHub Downloads (all assets, latest release)](https://img.shields.io/github/downloads/gaofengnan/ble.sh-debian/latest/total)
+![GitHub Release](https://img.shields.io/github/v/release/gaofengnan/ble.sh-debian)
+![GitHub Release Date](https://img.shields.io/github/release-date/gaofengnan/ble.sh-debian?display_date=published_at)
 
 <h1>
    <p align="center">
-     <a href="https://github.com/akinomyoga/ble.sh"><img src="https://github.com/dariogriffo/ble.sh-debian/blob/main/blesh-logo.svg" alt="ble.sh Logo" width="128" style="margin-right: 20px"></a>
-     <a href="https://www.debian.org/"><img src="https://github.com/dariogriffo/ble.sh-debian/blob/main/debian-logo.png" alt="Debian Logo" width="104" style="margin-left: 20px"></a>
+     <a href="https://github.com/akinomyoga/ble.sh"><img src="https://github.com/gaofengnan/ble.sh-debian/blob/main/blesh-logo.svg" alt="ble.sh Logo" width="128" style="margin-right: 20px"></a>
+     <a href="https://www.debian.org/"><img src="https://github.com/gaofengnan/ble.sh-debian/blob/main/debian-logo.png" alt="Debian Logo" width="104" style="margin-left: 20px"></a>
      <br>ble.sh for Debian
    </p>
 </h1>
@@ -16,8 +16,10 @@
 
 # ble.sh for Debian
 
+> Fork of [dariogriffo/ble.sh-debian](https://github.com/dariogriffo/ble.sh-debian) (MIT); the original packaging is by Dario Griffo. Served at [deb.gaofn.xyz](https://deb.gaofn.xyz) for Debian 12 (bookworm) and 13 (trixie).
+
 This repository contains build scripts to produce the _unofficial_ Debian packages
-(.deb) for [ble.sh](https://github.com/akinomyoga/ble.sh/) hosted at [deb.griffo.io](https://deb.griffo.io)
+(.deb) for [ble.sh](https://github.com/akinomyoga/ble.sh/) hosted at [deb.gaofn.xyz](https://deb.gaofn.xyz)
 
 Currently supported Debian distros are:
 - Bookworm (v12)
@@ -73,19 +75,13 @@ sorts above Debian's own `0.4.0~git…` versions.
 
 ## Install/Update
 
-📖 **Step-by-step install guide:** [Debian](https://deb.griffo.io/install-latest-blesh-in-debian.html) · [Ubuntu](https://deb.griffo.io/install-latest-blesh-in-ubuntu.html)
-
 ### The Debian way
-
-> ⚠️ **apt access requires a yearly subscription**
-> ([deb.griffo.io](https://deb.griffo.io)). To use this tool for free, download
-> the .deb from the [Releases](https://github.com/dariogriffo/ble.sh-debian/releases) page
-> and install it manually (see below).
 
 ```sh
 sudo install -d -m 0755 /etc/apt/keyrings
-curl -fsSL https://deb.griffo.io/EA0F721D231FDD3A0A17B9AC7808B4DD62C41256.asc | sudo gpg --dearmor --yes -o /etc/apt/keyrings/deb.griffo.io.gpg
-echo "deb [signed-by=/etc/apt/keyrings/deb.griffo.io.gpg] https://deb.griffo.io/apt $(lsb_release -sc 2>/dev/null) main" | sudo tee /etc/apt/sources.list.d/deb.griffo.io.list
+sudo curl -fsSL https://deb.gaofn.xyz/deb.gaofn.xyz.gpg -o /etc/apt/keyrings/deb.gaofn.xyz.gpg
+sudo curl -fsSL https://deb.gaofn.xyz/deb.gaofn.xyz.sources -o /etc/apt/sources.list.d/deb.gaofn.xyz.sources
+# Debian 12 (bookworm): fetch deb.gaofn.xyz-bookworm.sources instead
 sudo apt update
 sudo apt install -y ble.sh
 # optional: sudo apt install -y ble.sh-airline-themes
@@ -94,7 +90,7 @@ sudo apt install -y ble.sh
 ### Manual Installation
 
 1. Download the .deb package(s) for your Debian version available on
-   the [Releases](https://github.com/dariogriffo/ble.sh-debian/releases) page.
+   the [Releases](https://github.com/gaofengnan/ble.sh-debian/releases) page.
 2. Install the downloaded .deb package(s).
 
 ```sh
